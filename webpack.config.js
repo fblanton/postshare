@@ -23,7 +23,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js/,
         exclude: /(node_modules)/,
         loader: 'babel-loader?presets[]=react,presets[]=es2015',
         plugins: ['react-hot-loader/babel']

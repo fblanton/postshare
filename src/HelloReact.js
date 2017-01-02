@@ -9,7 +9,7 @@ const Hello = ({ hellos, add }) => {
   return (
     <div>
       { hellos.map((hello, i) =>
-        <h1 key={ i } onClick={ () => add('Hello') }>{ hello }</h1>)
+        <h1 key={ i } onClick={ () => add('H llo') }>{ hello }</h1>)
       }
     </div>
   )
