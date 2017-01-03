@@ -5,19 +5,19 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const { AppContainer } = require('react-hot-loader')
 const store = require('./store')
-const App = require('./App')
+const Root = require('./Root')
 
-const render = TheApp => ReactDOM.render(
+const render = TheRoot => ReactDOM.render(
   <AppContainer>
-    <TheApp store={ store }/>
+    <TheRoot store={ store }/>
   </AppContainer>
   , document.getElementById('app')
 )
 
-render(App)
+render(Root)
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    render(require('./App'))
+  module.hot.accept('./Root', () => {
+    render(require('./Root'))
   })
 }

@@ -1,11 +1,16 @@
 const React = require('react')
-const { Provider } = require('react-redux')
-const { render } = require('react-dom')
-const HelloReact = require('./HelloReact')
 const { Jumbotron, Container, Button } = require('reactstrap')
 
-module.exports = (props) => { return (
-  <Provider store={ props.store }>
+module.exports = ({ children: thisChildren, route }) => {
+  let children = null
+
+  if (thisChildren) {
+    children = React.cloneElement(thisChildren, {
+      auth: route.auth
+    })
+  }
+
+  return (
     <div>
       <Jumbotron fluid>
         <Container>
@@ -14,6 +19,7 @@ module.exports = (props) => { return (
           <hr />
         </Container>
       </Jumbotron>
+      { children }
     </div>
-  </Provider>
-)}
+  )
+}
